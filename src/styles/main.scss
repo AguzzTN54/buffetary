@@ -1,0 +1,145 @@
+@import './utils.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  @include media(tablet) {
+    width: 0px;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background-color: lighten($utama, 20%);
+  border-radius: 5px;
+  @include media(tablet) {
+    background-color: unset;
+    border-radius: unset;
+    &:hover {
+      background-color: unset;
+    }
+  }
+
+  &:hover {
+    background-color: $utama;
+  }
+}
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth !important;
+}
+body.open {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $utama;
+}
+a:hover {
+  color: darken($utama, 15%);
+}
+
+button {
+  cursor: pointer;
+}
+
+.bi {
+  pointer-events: none;
+}
+
+.bi-heart {
+  color: #f50057;
+}
+.bi-facebook {
+  color: #3b5999;
+}
+.bi-twitter {
+  color: #1da1f2;
+}
+.bi-instagram {
+  color: #c32aa3;
+}
+.bi-github {
+  color: #131418;
+}
+
+.skip {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  padding: 15px 20px;
+  background-color: #000;
+  color: $utama;
+  font-size: 1em;
+  transform: translate(-100%, -100%);
+  border: 1px solid $utama;
+  transition: all cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+  &:focus {
+    top: 10px;
+    left: 10px;
+    transform: translate(0%, 0%);
+    box-shadow: 0 0 10px rgba($utama, 1);
+  }
+}
+
+button:focus,
+input:focus {
+  outline: 1px solid #131418;
+  box-shadow: 0 0 10px rgba($utama, 1);
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+
+  @include media(tablet) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@include media(mobile) {
+  body {
+    font-size: 0.9rem;
+  }
+  .container {
+    margin-right: 3%;
+    margin-left: 3%;
+  }
+}
+
+@for $i from 0 to 6 {
+  .m-#{$i} {
+    margin: $i * 10px;
+  }
+  .p-#{$i} {
+    padding: $i * 10px;
+  }
+
+  $list: 'top', 'right', 'bottom', 'left';
+  @each $pcc in $list {
+    .m#{$pcc}-#{$i} {
+      margin-#{$pcc}: $i * 10px;
+    }
+    .p#{$pcc}-#{$i} {
+      padding-#{$pcc}: $i * 10px;
+    }
+  }
+}
+
+$posisi: fixed, absolute, relative;
+@each $pcc in $posisi {
+  .p-#{$pcc} {
+    position: $pcc;
+  }
+}
+
+@import './footer.scss';

@@ -1,0 +1,25 @@
+$utama: #fccc2c;
+
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile_s {
+    @media screen and (max-width: 320px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media screen and (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media screen and (max-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}

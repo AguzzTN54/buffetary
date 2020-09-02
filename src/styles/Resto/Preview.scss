@@ -1,0 +1,228 @@
+preview-resto {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.7);
+  // backdrop-filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.show {
+    pointer-events: unset;
+    opacity: 1;
+    .preview-dialog {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  .preview-dialog {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%) scale(0);
+    width: 1100px;
+    max-width: 90%;
+    height: 550px;
+    max-height: 90vh;
+    background-color: #fff;
+    transition: transform cubic-bezier(0.86, 0, 0.07, 1) 0.4s;
+
+    .close {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      background-color: white;
+      border-radius: 100%;
+      border: 1px solid #131418;
+      cursor: pointer;
+
+      &:focus {
+        outline: 0;
+      }
+      &:hover {
+        background-color: $utama;
+        border-color: transparent;
+        span {
+          &::after,
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    .preview-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      figure {
+        flex-basis: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      figcaption {
+        flex-basis: 50%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          text-align: left;
+        }
+        .top {
+          padding-bottom: 10px;
+          position: relative;
+          &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: block;
+            content: '';
+            border-top: 1px solid #ddd;
+          }
+        }
+
+        .description {
+          overflow-y: auto;
+          position: relative;
+          outline: 0;
+
+          &.bt::after {
+            opacity: 1;
+          }
+          &.tp::before {
+            opacity: 1;
+          }
+
+          &::before,
+          &::after {
+            content: '';
+            display: block;
+            position: sticky;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            opacity: 0;
+            transition: opacity ease-in-out 0.2s;
+          }
+          &::before {
+            top: 0;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            background-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0.3),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0)
+            );
+          }
+
+          &::after {
+            bottom: 0;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            background-image: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.3),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0)
+            );
+          }
+
+          .info {
+            width: 100%;
+            background-color: $utama;
+            margin-top: -15px;
+
+            a {
+              color: darken(rgb(255, 0, 0), 10%);
+            }
+            li {
+              padding: 12px 10px;
+              margin: 0;
+              border-bottom: 1px solid #fff;
+            }
+
+            .jadwal {
+              margin-top: -12px;
+              width: 100%;
+              .hariini {
+                height: 44px;
+                width: 100%;
+                text-align: left;
+                font-weight: bold;
+                font-size: 1rem;
+                text-transform: uppercase;
+                display: block;
+                background-color: transparent;
+                border: 0;
+                margin-bottom: -10px;
+                position: relative;
+                &:focus {
+                  outline: 0;
+                }
+                &:after {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  content: '+';
+                  font-size: 1.2em;
+                  width: 44px;
+                  height: 44px;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                }
+                &.active {
+                  &::after {
+                    content: '-';
+                  }
+                  ~ .jadwal-list {
+                    height: 170px;
+                  }
+                }
+              }
+
+              .jadwal-list {
+                display: block;
+                height: 0px;
+                overflow: hidden;
+                transition: height 1s cubic-bezier(0.86, 0, 0.07, 1);
+                table {
+                  width: 100%;
+                  tr {
+                    td:nth-child(2) {
+                      text-align: right;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        p {
+          padding: 0 10px;
+          font-size: 0.95em;
+          line-height: 1.4em;
+        }
+      }
+    }
+  }
+}
+
+@import './Preview-Responsive.scss';

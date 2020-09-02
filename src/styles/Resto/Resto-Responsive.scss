@@ -1,0 +1,35 @@
+resto-list {
+  @include media(tablet) {
+    h2 {
+      text-align: left;
+    }
+    .resto {
+      resto-item {
+        flex-basis: 30%;
+        margin: 5px;
+      }
+    }
+  }
+  @include media(mobile) {
+    margin-top: 50px;
+    .resto {
+      resto-item {
+        flex-basis: 45% !important;
+        &:active {
+          transform: scale(0.95);
+        }
+        figure {
+          img {
+            height: 150px;
+          }
+        }
+        figcaption {
+          padding: 10px;
+          h4 > a {
+            margin: 4px 0 6px;
+          }
+        }
+      }
+    }
+  }
+}

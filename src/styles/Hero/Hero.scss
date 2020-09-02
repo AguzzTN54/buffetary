@@ -1,0 +1,122 @@
+@import '../utils.scss';
+
+hero-content {
+  display: block;
+  // overflow-x: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      rgba(darken($color: $utama, $amount: 80%), 0.85),
+      rgba(darken($color: $utama, $amount: 80%), 0.6)
+    );
+  }
+
+  img {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+  }
+
+  .hero-fill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .greet {
+      color: white;
+      font-style: italic;
+      line-height: 3em;
+      margin-bottom: 50px;
+      text-align: right;
+      font-size: 0.9em;
+      span {
+        font-style: normal;
+        font-size: 2em;
+        color: $utama;
+        // display: block;
+        font-weight: bolder;
+      }
+    }
+
+    .search {
+      width: 50%;
+      position: relative;
+      text-align: center;
+
+      input[type='text'] {
+        height: 60px;
+        width: 100%;
+        border: 0;
+        border-radius: 50px;
+        // border: 1px solid $utama;
+        color: #000;
+        padding-left: 30px;
+        padding-right: 70px;
+        font-size: 1.2em;
+        font-weight: lighter;
+        // background-color: transparent;
+        background-color: white;
+
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.7);
+        }
+
+        &:focus {
+          // border: 4px solid $utama;
+          outline: 0;
+          // backdrop-filter: blur(10px);
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        height: 45px;
+        width: 50px;
+        font-size: 1.7em;
+        background-color: transparent;
+        color: $utama;
+        border: 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.4);
+      }
+
+      .explore {
+        color: $utama;
+        width: 170px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        padding: 10px 20px;
+        border: 1.5px solid $utama;
+        border-radius: 50px;
+        transition: all 0.2s;
+
+        &:hover,
+        &:focus {
+          background-color: $utama;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+@import './Hero-Responsive.scss';

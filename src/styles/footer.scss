@@ -1,0 +1,36 @@
+footer {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 0.9em;
+
+  .bi {
+    font-size: initial;
+  }
+  .totop {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid $utama;
+    color: $utama;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    font-size: initial;
+    background-color: darken(#ccc, 90%);
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $utama;
+      color: #fff;
+    }
+  }
+}
