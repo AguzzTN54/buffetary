@@ -1,16 +1,22 @@
 $utama: #fccc2c;
 
+$breakpoint-mobile-small: 300px;
 $breakpoint-mobile: 425px;
+$breakpoint-mobile-large: 600px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
 @mixin media($breakpoint) {
-  @if $breakpoint == mobile_s {
-    @media screen and (max-width: 320px) {
+  @if $breakpoint == mobileSmall {
+    @media screen and (max-width: $breakpoint-mobile-small) {
       @content;
     }
   } @else if $breakpoint == mobile {
     @media screen and (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == mobileLarge {
+    @media screen and (max-width: $breakpoint-mobile-large) {
       @content;
     }
   } @else if $breakpoint == tablet {

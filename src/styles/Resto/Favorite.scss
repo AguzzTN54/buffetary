@@ -1,0 +1,64 @@
+@import '../utils.scss';
+
+my-favorite {
+  > figure {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    color: $utama;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to top,
+        rgba(darken($color: $utama, $amount: 70%), 0.85),
+        rgba(darken($color: $utama, $amount: 70%), 0.5)
+      );
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@include media(mobile) {
+  my-favorite {
+    > figure {
+      margin-bottom: -20px;
+      height: 150px;
+      h1 {
+        font-size: 2em;
+      }
+    }
+    .container {
+      position: relative;
+      z-index: +1;
+      margin: 0;
+      padding-top: 5px;
+      padding-left: 3%;
+      padding-right: 3%;
+      background-color: #fff;
+      border-radius: 20px 20px 0 0;
+
+      .heading-title {
+        margin: 15px !important;
+        text-align: center;
+      }
+    }
+  }
+}

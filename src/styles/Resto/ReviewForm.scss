@@ -1,0 +1,127 @@
+@import '../utils.scss';
+
+review-form {
+  position: relative;
+  display: block;
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+
+  .input-star {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: xxx-large;
+    justify-content: center;
+    line-height: 0;
+    color: #ccc;
+    margin: 10px 0 0;
+
+    label {
+      cursor: pointer;
+    }
+    input {
+      display: none;
+    }
+    input:checked ~ label,
+    &:not(:checked) > label:hover,
+    &:not(:checked) > label:hover ~ label {
+      color: $utama;
+    }
+
+    input:checked + label:hover,
+    input:checked ~ label:hover,
+    label:hover ~ input:checked ~ label,
+    input:checked ~ label:hover ~ label {
+      color: orange;
+    }
+  }
+
+  .review-data {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s height cubic-bezier(0.77, 0, 0.175, 1);
+    &.active {
+      height: 250px;
+    }
+    input {
+      outline: 0;
+    }
+  }
+
+  .form-group {
+    display: block;
+    margin: 5px 0;
+    label {
+      display: block;
+      font-size: 0.9em;
+    }
+    input[type='text'] {
+      border: 1px solid #aaa;
+      border-radius: 50px;
+      color: #000;
+      font-size: 1rem;
+      padding: 10px 20px;
+      display: block;
+      width: 100%;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      border-radius: 5px;
+      color: #000;
+      font-size: 1rem !important;
+      font-family: sans-serif;
+      padding: 10px 20px;
+    }
+  }
+  button[type='submit'] {
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: $utama;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.2s all;
+    &:hover {
+      background-color: orange;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.review-sent {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+
+  &.success {
+    background-color: rgb(46, 160, 46);
+  }
+  &.fail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lighten(red, 15%);
+    animation: error linear 5s;
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateY(-100%);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

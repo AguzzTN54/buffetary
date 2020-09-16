@@ -1,6 +1,7 @@
-resto-list {
+resto-list,
+my-favorite {
   @include media(tablet) {
-    h2 {
+    .heading-title {
       text-align: left;
     }
     .resto {
@@ -11,25 +12,46 @@ resto-list {
     }
   }
   @include media(mobile) {
-    margin-top: 50px;
-    .resto {
-      resto-item {
-        flex-basis: 45% !important;
-        &:active {
-          transform: scale(0.95);
-        }
-        figure {
-          img {
-            height: 150px;
-          }
-        }
-        figcaption {
-          padding: 10px;
-          h4 > a {
-            margin: 4px 0 6px;
-          }
+    .heading-title {
+      margin-top: 50px;
+    }
+  }
+}
+
+@include media(mobileLarge) {
+  .resto {
+    resto-item {
+      flex-basis: 45% !important;
+    }
+  }
+}
+
+@include media(mobile) {
+  .resto {
+    resto-item {
+      &:active {
+        transform: scale(0.95);
+      }
+      figure {
+        img,
+        .thumbnail {
+          height: 150px;
         }
       }
+      figcaption {
+        padding: 10px;
+        h4 > a {
+          margin: 4px 0 6px;
+        }
+      }
+    }
+  }
+}
+
+@include media(mobileSmall) {
+  .resto {
+    resto-item {
+      flex-basis: 80% !important;
     }
   }
 }

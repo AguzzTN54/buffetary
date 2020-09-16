@@ -1,5 +1,5 @@
 preview-resto {
-  @include media(mobile) {
+  @include media(mobileLarge) {
     &.show {
       .preview-dialog {
         transform: translateY(0);
@@ -29,7 +29,7 @@ preview-resto {
         overflow: auto;
         figure {
           border-radius: 0px;
-          margin-top: 50px;
+          margin-top: 80px;
         }
 
         figcaption {

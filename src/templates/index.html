@@ -3,32 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jelajahi Tempat Makan di Sekitarmu" />
+
     <title>Buffetary - Resto Explorer</title>
+
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <!-- <link
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./images/icons/apple-touch-icon.png"
+      href="./images/icons/icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/icons/favicon-32x32.png"
+      href="./images/icons/icon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/icons/favicon-16x16.png"
-    /> -->
+      href="./images/icons/icon-16x16.png"
+    />
     <link
       rel="mask-icon"
       href="./images/icons/safari-pinned-tab.svg"
       color="#fccc2c"
     />
+
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#fccc2c" />
+    <link rel="manifest" href="./manifest.json" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
@@ -42,6 +47,29 @@
       Halaman Ini membutuhkan javascript untuk dijalankan, pastikan anda telah
       mengaktifkan javascript pada pengaturan browser anda
     </noscript>
-    <div id="root"></div>
+    <div class="loader">
+      <div class="loader-icon">
+        <span></span>
+      </div>
+      <p class="mtop-3">Tunggu Sejenak..</p>
+    </div>
+
+    <button class="skip" id="skip-button">Skip To Contents</button>
+
+    <header class="p-relative" id="top"></header>
+
+    <main></main>
+
+    <footer>
+      <button class="totop" aria-label="Kembali Ke Atas">
+        <i class="bi bi-arrow-up"></i>
+      </button>
+
+      <% const Config = require('../scripts/Globals/Config'); const {NAME,
+      MAIN_URL} = Config.default; const year = new Date().getFullYear(); %>
+      Copyright &copy <%= year %> - <a href="<%= MAIN_URL %>"><%= NAME %> </a>
+      <br />
+      Made with <i class="bi bi-heart"></i> by AguzzTN54
+    </footer>
   </body>
 </html>

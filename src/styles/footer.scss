@@ -1,5 +1,4 @@
 footer {
-  margin-top: 20px;
   display: block;
   width: 100%;
   background-color: #000;
@@ -19,6 +18,7 @@ footer {
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    outline: 0;
     border: 1px solid $utama;
     color: $utama;
     position: fixed;
@@ -26,6 +26,8 @@ footer {
     bottom: 15px;
     font-size: initial;
     background-color: darken(#ccc, 90%);
+    opacity: 0;
+    pointer-events: none;
     transition: all 0.2s;
 
     &:hover {

@@ -96,6 +96,31 @@ input:focus {
   box-shadow: 0 0 10px rgba($utama, 1);
 }
 
+.load-placeholder {
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    #dfdfdf 2%,
+    #c5c5c5 18%,
+    #dfdfdf 33%
+  );
+  background-size: 300%;
+  background-position: 100%;
+  animation: placeholder 1.7s linear infinite forwards;
+}
+
+@keyframes placeholder {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+main {
+  min-height: calc(100vh - 82px);
+}
 .container {
   margin-left: 10%;
   margin-right: 10%;
@@ -141,5 +166,5 @@ $posisi: fixed, absolute, relative;
     position: $pcc;
   }
 }
-
+@import './Loading.scss';
 @import './footer.scss';

@@ -1,7 +1,8 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -19,6 +20,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              url: false,
+            },
           },
           {
             loader: 'sass-loader',
@@ -44,5 +48,8 @@ module.exports = {
       filename: 'assets/css/stylesheet.css',
       ignoreOrder: true,
     }),
+    new InjectManifest({
+      swSrc: path.join(process.cwd(), './src/scripts/sw.js'),
+    }),
   ],
-}
+};

@@ -1,3 +1,10 @@
+#Archive
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
 # Logs
 logs
 *.log
@@ -7,10 +14,11 @@ yarn-error.log*
 firebase-debug.log*
 
 # Firebase cache
+/public
+/dist
 .firebase/
 .firebaserc
-public
-dist
+firebase.json
 
 # Firebase config
 

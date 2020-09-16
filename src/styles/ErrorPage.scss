@@ -1,0 +1,69 @@
+@import './utils.scss';
+
+error-page,
+.error-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &[data-type='not-found'] {
+    figure {
+      max-width: 50%;
+    }
+  }
+
+  figure {
+    margin-top: 40px;
+    width: 300px;
+    max-width: 70%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    text-align: center;
+    padding: 10px 20px 10px;
+    height: 100%;
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .refresh {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 20px 10px;
+      background-color: $utama;
+      border: 0;
+      border-radius: 5px;
+      transform: scale(1);
+      transition: 0.2s all;
+      color: #000;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: orange;
+        color: #fff;
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+
+@include media(mobileLarge) {
+  error-page {
+    figure {
+      margin-top: 50px;
+    }
+    figcaption {
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
