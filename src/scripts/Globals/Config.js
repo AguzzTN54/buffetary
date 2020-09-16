@@ -7,11 +7,6 @@ const APP_CONFIG = {
     VERSION: 1,
     STORE: 'Favorite',
   },
-  CACHE: {
-    CACHENAME: 'DataCache',
-    PREFIX: 'BFT',
-    SUFFIX: 'v1',
-  },
 };
 
 export default APP_CONFIG;

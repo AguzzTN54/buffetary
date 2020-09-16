@@ -12,7 +12,7 @@ class FavoriteComponent extends HTMLElement {
     }
     this.innerHTML = `
       <figure>
-        <img src="./images/heros/hero-image_2.jpg" alt="Banner Favorite"/>
+        <img src="./images/heros/hero-image_2.webp" alt="Banner Favorite"/>
         <h1>FAVORITE</h1>
       </figure>
       <preview-resto> </preview-resto>

@@ -1,5 +1,5 @@
 const HeroTpl = `
-<img src="./images/heros/hero-image_2.jpg" alt="Banner Image" />
+<img src="./images/heros/hero-image_2.webp" alt="Banner Image" />
 <div class="hero-fill">
 
   <div class="greet">
