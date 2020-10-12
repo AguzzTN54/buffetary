@@ -2,18 +2,23 @@
   "env": {
     "browser": true,
     "es2020": true,
-    "node": true
+    "node": true,
+    "jasmine": true,
+    "codeceptjs/codeceptjs": true
   },
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "plugin:codeceptjs/recommended"],
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "plugins": ["jasmine", "codeceptjs"],
   "rules": {
+    "consistent-return": 0,
     "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "linebreak-style": 0,
     "no-console": 0,
     "no-underscore-dangle": 0,
-    "no-plusplus": 0,
-    "linebreak-style": 0
+    "no-plusplus": 0
   }
 }

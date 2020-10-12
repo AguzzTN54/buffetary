@@ -1,3 +1,6 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import UrlParser from '../Routes/UrlParser';
 import Routes from '../Routes/Routes';
 import ToTopButton from '../Utils/Init/ToTopButtonInit';

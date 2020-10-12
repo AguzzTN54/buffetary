@@ -18,6 +18,8 @@ class RestoDetailComponent extends HTMLElement {
     document.body.classList.remove('open');
     this.setAttribute('id', 'content');
     this.innerHTML = RestoDetailTpl.preload();
+    const footer = document.querySelector('footer');
+    footer.style.height = 'unset';
   }
 
   set data(restoData) {

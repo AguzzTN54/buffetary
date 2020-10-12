@@ -5,7 +5,6 @@ import {
   getTelp,
   jamBuka,
 } from '../../../Utils/RestoRandomData/Index';
-import Thumbnail from '../../../Utils/Thumbnail-Helper';
 import RestoListItemTpl from '../../Templates/RestoListItem';
 import '../StarRating';
 
@@ -32,8 +31,6 @@ class RestoListItem extends HTMLElement {
   }
 
   event() {
-    const thumbnailElement = this.querySelector('img');
-    Thumbnail(thumbnailElement);
     const moreButon = this.querySelector('.more');
     moreButon.addEventListener('click', () => {
       const previewElement = document.querySelector('preview-resto');

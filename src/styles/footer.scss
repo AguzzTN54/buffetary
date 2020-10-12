@@ -1,4 +1,6 @@
 footer {
+  height: 0;
+  overflow: hidden;
   display: block;
   width: 100%;
   background-color: #000;
@@ -7,6 +9,7 @@ footer {
   text-align: center;
   line-height: 1.5em;
   font-size: 0.9em;
+  transition: height 0.5s;
 
   .bi {
     font-size: initial;

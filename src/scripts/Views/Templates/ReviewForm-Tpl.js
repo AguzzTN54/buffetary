@@ -62,7 +62,7 @@ const Form = `
       <label for="review-message">Text Review</label>
       <textarea id="review-message" name="review-message"></textarea>
     </div>
-    <button type="submit"> Kirim Review</button>
+    <button type="submit" id="sent-button"> Kirim Review</button>
   </div>
 </form>
 `;

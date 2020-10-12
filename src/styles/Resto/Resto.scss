@@ -44,7 +44,7 @@ my-favorite {
     .closed {
       font-size: smaller;
       border-radius: 5px;
-      background-color: red;
+      background-color: #b50000;
       color: white;
       padding: 2px 5px;
     }
@@ -85,15 +85,15 @@ my-favorite {
       }
       p {
         margin: 5px 0;
-        color: darken(#ccc, 30%);
+        color: #585858;
         line-height: 1.2em;
         .more {
           cursor: pointer;
           background-color: transparent;
           border: 0;
-          color: darken($utama, 15%);
+          color: #6b5200;
           &:hover {
-            color: darken($utama, 25%);
+            color: darken($utama, 15%);
           }
         }
       }

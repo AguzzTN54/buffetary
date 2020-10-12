@@ -12,15 +12,21 @@ class FavoriteComponent extends HTMLElement {
     }
     this.innerHTML = `
       <figure>
-        <img src="./images/heros/hero-image_2.webp" alt="Banner Favorite"/>
+        <img src="./images/heros/hero-image_2.webp"
+          srcset="./images/heros/hero-image_2-small.webp 480w, ./images/heros/hero-image_2-medium.webp 800w"
+          sizes="(max-width: 600px) 480px, 800px"
+          alt="Banner Favorite"
+        />
         <h1>FAVORITE</h1>
       </figure>
       <preview-resto> </preview-resto>
       <section class="container" id="content" tabindex>
-        <h2 class="heading-title"> MY FAVORITE RESTAURANTS</h2>
+        <h2 class="heading-title">MY FAVORITE RESTAURANTS</h2>
         <div class="resto">${itemPlacehoder}</div>
       </section>
     `;
+    const footer = document.querySelector('footer');
+    footer.style.height = 'unset';
   }
 
   set data(data) {

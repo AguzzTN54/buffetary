@@ -46,10 +46,12 @@ const LoveButton = {
   },
 
   _markUnsave() {
+    this._element.setAttribute('aria-label', 'Love this Resto');
     this._element.innerHTML = '<i class="bi bi-heart-o"></i>';
   },
 
   _markSaved() {
+    this._element.setAttribute('aria-label', 'UnLove this Resto');
     this._element.innerHTML = '<i class="bi bi-heart"></i>';
   },
 };

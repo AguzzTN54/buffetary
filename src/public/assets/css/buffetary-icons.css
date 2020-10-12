@@ -5,6 +5,7 @@
   src: url('../fonts/buffetary.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 [data-icon]:before {
@@ -16,7 +17,6 @@
   text-transform: none !important;
   speak: none;
   line-height: 1;
-  font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,87 +30,85 @@
   text-transform: none !important;
   speak: none;
   line-height: 1;
-  font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .bi-trash:before {
-  content: "\65";
+  content: '\65';
 }
 .bi-no-internet:before {
-  content: "\66";
+  content: '\66';
 }
 .bi-internet:before {
-  content: "\67";
+  content: '\67';
 }
 .bi-star:before {
-  content: "\62";
+  content: '\62';
 }
 .bi-star-o:before {
-  content: "\63";
+  content: '\63';
 }
 .bi-twitter:before {
-  content: "\64";
+  content: '\64';
 }
 .bi-github:before {
-  content: "\69";
+  content: '\69';
 }
 .bi-facebook:before {
-  content: "\6a";
+  content: '\6a';
 }
 .bi-heart:before {
-  content: "\6b";
+  content: '\6b';
 }
 .bi-heart-o:before {
-  content: "\6c";
+  content: '\6c';
 }
 .bi-arrow-up:before {
-  content: "\6d";
+  content: '\6d';
 }
 .bi-places:before {
-  content: "\6e";
+  content: '\6e';
 }
 .bi-home:before {
-  content: "\68";
+  content: '\68';
 }
 .bi-search:before {
-  content: "\70";
+  content: '\70';
 }
 .bi-instagram:before {
-  content: "\77";
+  content: '\77';
 }
 .bi-user:before {
-  content: "\78";
+  content: '\78';
 }
 .bi-phone:before {
-  content: "\71";
+  content: '\71';
 }
 .bi-mail:before {
-  content: "\72";
+  content: '\72';
 }
 .bi-clock:before {
-  content: "\79";
+  content: '\79';
 }
 .bi-web:before {
-  content: "\7a";
+  content: '\7a';
 }
 .bi-information:before {
-  content: "\41";
+  content: '\41';
 }
 .bi-grid:before {
-  content: "\42";
+  content: '\42';
 }
 .bi-review:before {
-  content: "\43";
+  content: '\43';
 }
 .bi-menus:before {
-  content: "\61";
+  content: '\61';
 }
 .bi-drink:before {
-  content: "\44";
+  content: '\44';
 }
 .bi-food:before {
-  content: "\45";
+  content: '\45';
 }
-

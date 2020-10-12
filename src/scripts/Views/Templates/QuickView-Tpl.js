@@ -17,9 +17,9 @@ const QuickViewTpl = (restoData, jadwal) => {
   } = restoData;
   const { hariIni, semuaJadwal } = jadwal;
   const { SERVER_API } = APP_CONFIG;
-  const picture = isFavorite
+  const picture = (size) => (isFavorite
     ? pictureBlob
-    : `${SERVER_API}/images/medium/${pictureId}`;
+    : `${SERVER_API}/images/${size}/${pictureId}`);
 
   return `
     <div class="preview-dialog">
@@ -29,7 +29,12 @@ const QuickViewTpl = (restoData, jadwal) => {
 
       <div class="preview-content">
         <figure>
-          <img src="${picture}" alt="${name}" class="load-placeholder" />
+          <img src="${picture('large')}"
+            srcset="${picture('small')} 480w, ${picture('medium')} 800w"
+            sizes="(max-width: 600px) 480px, 800px"
+            alt="${name}"
+            class="load-placeholder"
+          />
         </figure>
 
         <figcaption>

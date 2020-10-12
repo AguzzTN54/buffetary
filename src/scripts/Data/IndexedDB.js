@@ -14,8 +14,8 @@ const IndexedDB = openDB(DBNAME, VERSION, {
 
 const Blob = {
   async save(id) {
-    const imgMedium = await fetch(`${SERVER_API}/images/medium/${id}`);
-    const imgMediumBlob = await imgMedium.blob();
+    const imgLarge = await fetch(`${SERVER_API}/images/large/${id}`);
+    const imgMediumBlob = await imgLarge.blob();
     const imgToSave = { id, blob: imgMediumBlob };
     return (await IndexedDB).put(IMGSTORE, imgToSave);
   },
@@ -31,21 +31,36 @@ const Blob = {
 
 const Resto = {
   async RestoDetails(id) {
+    if (!id) return;
     const RestoData = await this.getRestoDetail(id);
     const errorMsg = 'Tidak Ada Data Tersimpan';
     const NotFound = { error: true, errorMsg };
     return RestoData || NotFound;
   },
   async getRestoDetail(id) {
+    if (!id) return;
     return (await IndexedDB).get(STORE, id);
   },
   async getAllResto() {
     return (await IndexedDB).getAll(STORE);
   },
+  async searchResto(query) {
+    return (await this.getAllResto()).filter((resto) => {
+      const { restaurant } = resto;
+      const restoTitle = (restaurant.name || '-').toLowerCase();
+      const jammedRestoTitle = restoTitle.replace(/\s/g, '');
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+      return jammedRestoTitle.indexOf(jammedQuery) !== -1;
+    });
+  },
   async addResto(restaurantData) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (!restaurantData.hasOwnProperty('id')) return;
     return (await IndexedDB).put(STORE, restaurantData);
   },
   async deleteResto(id) {
+    if (!id) return;
     return (await IndexedDB).delete(STORE, id);
   },
 };

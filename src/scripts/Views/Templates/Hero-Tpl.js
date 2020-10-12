@@ -1,5 +1,9 @@
 const HeroTpl = `
-<img src="./images/heros/hero-image_2.webp" alt="Banner Image" />
+  <img src="./images/heros/hero-image_2.webp"
+    srcset="./images/heros/hero-image_2-small.webp 480w, ./images/heros/hero-image_2-medium.webp 800w"
+    sizes="(max-width: 600px) 480px, 800px"
+    alt="Hero Item"
+  />
 <div class="hero-fill">
 
   <div class="greet">

@@ -7,17 +7,19 @@ import './QuickView';
 class RestoListComponent extends HTMLElement {
   connectedCallback() {
     let itemPlacehoder = '';
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 20; i++) {
       itemPlacehoder += RestoListTpl;
     }
     this.innerHTML = `
-    <hero-content></hero-content>
-    <preview-resto></preview-resto>
-    <section class="container" id="content" tabindex>
+      <hero-content></hero-content>
+      <preview-resto></preview-resto>
+      <section class="container" id="content" tabindex>
         <h2 class="heading-title"> DISCOVER</h2>
         <div class="resto">${itemPlacehoder}</div>
       </section>
     `;
+    const footer = document.querySelector('footer');
+    footer.style.height = 'unset';
   }
 
   set data(data) {

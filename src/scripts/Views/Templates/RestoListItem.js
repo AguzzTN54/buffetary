@@ -17,14 +17,14 @@ const RestoListItemTpl = (RestoData) => {
 
   return `
   <figure>
-    <img src="${picture}" alt="Thumbnail ${name}" class="load-placeholder" />
+    <img src="./images/thumbnail.svg" data-src="${picture}" alt="Thumbnail ${name}" class="load-placeholder lazyload" />
     <div class="lokasi">
       <i class="bi bi-places"></i> ${city}
     </div>
   </figure>
-  <figcaption>
+  <figcaption class="resto-content-item">
     <h3>
-      <a href="#/restaurant/${id}${isFavorite ? '/saved' : ''}" title="View More About ${name}">${name}</a>
+      <a href="#/restaurant/${id}${isFavorite ? '/saved' : ''}" class="resto-title" title="View More About ${name}">${name || 'No Name'}</a>
     </h3>
 
     <star-rating data-rating="${rating}"></star-rating>

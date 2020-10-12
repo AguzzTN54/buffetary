@@ -33,11 +33,16 @@ const RestoDetailTpl = {
       pictureId,
     } = restoData;
     const { SERVER_API } = APP_CONFIG;
-    const picture = `${SERVER_API}/images/large/${pictureId}`;
+    const picture = (size) => `${SERVER_API}/images/${size}/${pictureId}`;
 
     return `
     <figure class="left-side">
-      <img src="${picture}" alt="${name}" class="load-placeholder" />
+      <img src="${picture('large')}"
+        srcset="${picture('small')} 480w, ${picture('medium')} 800w"
+        sizes="(max-width: 600px) 480px, 800px"
+        alt="${name}"
+        class="load-placeholder"
+      />
     </figure>
 
     <figcaption class="right-side">
