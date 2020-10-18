@@ -17,9 +17,11 @@ preview-resto {
       overflow: hidden;
 
       .close {
-        transform: scale(0.6);
-        top: 15px;
-        right: 10px;
+        // transform: scale(0.6);
+        height: 44px;
+        width: 44px;
+        top: 35px;
+        right: 30px;
         z-index: +2;
       }
 

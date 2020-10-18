@@ -9,15 +9,15 @@ const AppbarCreator = `<nav>
     </button>
   </div>
 
-  <a href="#/" class="brand" title="Logo ${NAME}">
+  <a href="#" class="brand" title="Logo ${NAME}">
     <img src="./images/Buffetary-Logo-white.svg" alt="Logo Buffetary" />
   </a>
 
   <form class="search-form" action="" method="post">
     <div class="search-mask">
       <hr />
-      <div>
-        Fungsi Pencarian Belum Berjalan
+      <div class="quick-result">
+        <i>Cari Berdasarkan nama, Lokasi atau keterangan</i>
       </div>
     </div>
 

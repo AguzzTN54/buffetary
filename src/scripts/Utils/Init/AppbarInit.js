@@ -1,12 +1,13 @@
-import AppBar from '../../Views/Components/Appbar/Appbar';
+import Data from '../../Data/RestoAPI';
+import '../../Views/Components/Appbar/Appbar';
 
 const AppbarInitiator = (headerContainer) => {
   const header = headerContainer;
   const newHeaderBar = document.createElement('app-bar');
   newHeaderBar.classList.add('p-absolute');
   header.appendChild(newHeaderBar);
-
-  customElements.define('app-bar', AppBar);
+  Data.RestoList()
+    .then((data) => { newHeaderBar.data = data.restaurants; });
 };
 
 export default AppbarInitiator;

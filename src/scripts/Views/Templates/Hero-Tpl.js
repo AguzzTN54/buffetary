@@ -12,7 +12,7 @@ const HeroTpl = `
     </h1>
   </div>
   <form class="hero-search-form">
-    <input type="text" name="q" aria-label="Cari Restoran" placeholder="Cari Tempat" />
+    <input type="text" name="q" aria-label="Cari Restoran" placeholder="Cari Tempat" autocomplete="off" class="hero-input-form" />
     <button type="submit" aria-label="Tombol Cari">
       <i class="bi bi-search"></i>
     </button>

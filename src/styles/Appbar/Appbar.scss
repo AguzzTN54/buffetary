@@ -24,6 +24,23 @@ app-bar {
       display: flex;
     }
   }
+
+  .quick-result {
+    a {
+      display: block;
+      padding: 10px 5px;
+      margin: 0 15px;
+      border-bottom: 1px solid #ddd;
+      color: black;
+      span {
+        font-weight: bold;
+      }
+      &:hover {
+        color: darken($utama, 10%);
+      }
+    }
+  }
+
   nav {
     display: flex;
     align-items: center;

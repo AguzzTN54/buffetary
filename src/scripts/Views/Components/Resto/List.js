@@ -26,22 +26,41 @@ class RestoListComponent extends HTMLElement {
     const { error, restaurants } = data;
     const isError = error || !restaurants;
     this._restoData = data;
-    return isError ? this.renderError() : this.event();
+    return isError ? this.renderError() : this._render(restaurants);
   }
 
-  event() {
+  set query(query) {
+    const searchResult = this._restoData.restaurants.filter((data) => {
+      const { name, city, description } = data;
+      return name.toLowerCase().includes(query)
+        || city.toLowerCase().includes(query)
+        || description.toLowerCase().includes(query);
+    });
+    return (searchResult.length > 0)
+      ? this._renderSearchResult(query, searchResult)
+      : this.renderError(`No Item(s) Found For '${query}'`);
+  }
+
+  _renderSearchResult(query, result) {
+    const element = this.querySelector('section');
+    element.innerHTML = `<h2 class="heading-title" style="text-align:center"> ${result.length} Item(s) found for "${query}"</h2>
+    <div class="resto"></div>`;
+    this._render(result);
+  }
+
+  _render(restoData) {
     const restoItemContainer = this.querySelector('.resto');
     restoItemContainer.innerHTML = '';
-    this._restoData.restaurants.forEach((data) => {
+    restoData.forEach((data) => {
       const restoItemElement = document.createElement('resto-item');
       restoItemElement.data = data;
       restoItemContainer.appendChild(restoItemElement);
     });
   }
 
-  renderError() {
+  renderError(dataMessage) {
     const element = this.querySelector('section');
-    element.innerHTML = '<error-page></error-page>';
+    element.innerHTML = `<error-page ${dataMessage ? `data-message="${dataMessage}"` : ''}></error-page>`;
   }
 }
 

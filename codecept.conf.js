@@ -9,8 +9,11 @@ exports.config = {
   output: 'e2e/outputs',
   helpers: {
     Puppeteer: {
+      keepBrowserState: true,
+      restart: false,
       url: 'http://localhost:8080',
       show: true,
+      waitForNavigation: ['load', 'networkidle0', 'networkidle2'],
       windowSize: '1200x900',
     },
   },
