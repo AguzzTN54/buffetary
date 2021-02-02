@@ -31,7 +31,8 @@ const RestoListItemTpl = (RestoData) => {
     <span style="margin-left:0; padding-left:10px;">${rating} (${reviewCount}) ${statusBuka}</span>
 
     <p class="description">
-    ${shortDescription} <button id="${id}" class="more">Read More</button>
+      <span>${shortDescription}</span>
+      <button id="${id}" class="more">Read More</button>
     </p>
   </figcaption>
   `;

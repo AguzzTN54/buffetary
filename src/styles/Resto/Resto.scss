@@ -76,7 +76,8 @@ my-favorite {
       h3 > a {
         font-size: 1em;
         display: block;
-        padding: 7px 0 12px;
+        // padding: 4px 0 12px;
+        padding: 0;
         color: #000;
         font-weight: bolder;
         &:hover {
@@ -89,7 +90,7 @@ my-favorite {
         line-height: 1.2em;
         .more {
           display: block;
-          height: 44px;
+          // height: 44px;
           cursor: pointer;
           background-color: transparent;
           border: 0;
@@ -98,6 +99,19 @@ my-favorite {
             color: darken($utama, 15%);
           }
         }
+      }
+    }
+
+    .description {
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      &::before {
+        display: none;
       }
     }
   }

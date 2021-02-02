@@ -29,14 +29,14 @@ my-favorite {
 @include media(mobile) {
   .resto {
     resto-item {
-      flex-basis: 95% !important;
+      // flex-basis: 95% !important;
       &:active {
         transform: scale(0.95);
       }
       figure {
         img,
         .thumbnail {
-          height: 200px;
+          height: 150px;
         }
       }
       figcaption {

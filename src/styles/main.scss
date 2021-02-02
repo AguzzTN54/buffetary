@@ -32,6 +32,9 @@ html,
 body {
   font-family: 'Open Sans', sans-serif;
   scroll-behavior: smooth !important;
+  @include media(mobile) {
+    font-size: 16px;
+  }
 }
 body.open {
   height: 100vh;
