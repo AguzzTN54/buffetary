@@ -59,7 +59,7 @@ class RestoDetailComponent extends HTMLElement {
 
   renderConsumerReview() {
     const reviewElement = this.querySelector('consumer-review');
-    reviewElement.data = this._data.consumerReviews;
+    reviewElement.data = this._data.customerReviews;
   }
 
   event() {

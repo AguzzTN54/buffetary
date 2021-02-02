@@ -25,7 +25,7 @@ const RestoDetailTpl = {
 
   main(restoData, schedule) {
     const {
-      consumerReviews,
+      customerReviews,
       id,
       name,
       menus,
@@ -54,7 +54,7 @@ const RestoDetailTpl = {
         <div style="display:flex;align-items:center;">
           <star-rating data-rating="${rating}" style="font-size:x-large"></star-rating>
           <span>
-            &nbsp; (${rating}) ${consumerReviews.length} Ulasan
+            &nbsp; (${rating}) ${customerReviews.length} Ulasan
           </span>
         </div>
       </div>
